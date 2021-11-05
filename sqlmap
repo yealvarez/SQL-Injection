@@ -24,3 +24,6 @@ proxychains sqlmap -r request2.req --level 2 --risk 1
 
 # Specific Parameter
 proxychains sqlmap -r request2.req --level 2 --risk 1 -p id
+
+proxychains sqlmap -r reqsqlmap.req --dbs
+proxychains sqlmap -r reqsqlmap.req  -D "db_crm" --tables 
