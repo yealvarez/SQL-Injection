@@ -37,3 +37,6 @@ sqlmap -r req.req --force-ssl
 # view on burp suite
 sqlmap -r req.req --random-agent --proxy="https://192.168.20.43:8090" --force-ssl
 
+#file name parameter nad ignore code 500 
+sqlmap -r req.req --level 3 --risk 3 -p 'filename' --force-ssl --dump --technique T --ignore-code 500
+
