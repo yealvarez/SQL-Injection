@@ -11,7 +11,7 @@ signal.signal(signal.SIGINT, def_handler)
 
 url = 'https://target.com/login.php' 
 burp = {'https': 'https://127.0.0.1:8080'} 
-s = r'0123456789abcdefghijklmnopqrstuvwxyz_' 
+s = r'0123456789abcdefghijklmnopqrstuvwxyz_()-.' 
 result = ''
 
 def check(payload):
