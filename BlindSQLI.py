@@ -4,7 +4,7 @@ import requests, time, sys, signal
 from pwn import *
 
 def def_handler(sig, frame) : 
-    log.failure( "Saliendo") 
+    log.failure( "Finishing...") 
     sys.exit(1)
 
 signal.signal(signal.SIGINT, def_handler)
@@ -17,7 +17,7 @@ result = ''
 def check(payload):
 
     data_post={
-        'correo': '%s' % payload, 
+        'user': '%s' % payload, 
         'pass': 'test'
 
     }
